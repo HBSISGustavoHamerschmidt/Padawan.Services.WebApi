@@ -16,7 +16,7 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
         }
 
         [HttpGet]
-        [Route("BiruleiReinaldo")]
+        [Route("Reinaldo")]
         public ActionResult GetPessoaFisica()
         {
             var result = new PessoaFisica()
@@ -32,7 +32,7 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
         public static List<PessoaFisica> minhaLista = new List<PessoaFisica>();
 
         [HttpPost]
-        [Route("postBiruleiReinaldo")]
+        [Route("postReinaldo")]
         public ActionResult PostPessoaFisica(PessoaFisica PessoaFisica)
         {
             minhaLista.Add(PessoaFisica);
@@ -41,14 +41,14 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
         }
 
         [HttpPost]
-        [Route("GetGetBiruleiReinaldo")]
+        [Route("GetGetReinaldo")]
         public ActionResult PostGetPessoaFisica(string NomePessoa)
         {
             return Ok(minhaLista);
         }
 
         [HttpGet]
-        [Route("GetBiruleiReinaldo")]
+        [Route("GetReinaldo")]
         public ActionResult GetPessoaFisica(string PessoaFisica)
         {
             var result = new Result<List<PessoaFisica>>();
@@ -86,7 +86,7 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteBiruleiReinaldo")]
+        [Route("DeleteReinaldo")]
         public ActionResult DeletePessoaFisica(string PessoaFisica)
         {
             try
@@ -106,7 +106,7 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
         }
 
         [HttpPut]
-        [Route("PutBiruleiReinaldo")]
+        [Route("PutReinaldo")]
         public ActionResult PutPessoaFisica(string PessoaFisica, string NovaPessoaFisica)
         {
             var result = new Result<List<PessoaFisica>>();
@@ -128,9 +128,6 @@ namespace HBSIS.Services.CRUD.PessoaFisica.Controllers
                 result.Message = ex.Message;
                 return BadRequest(result);
             }
-
         }
-
-
     }
 }
